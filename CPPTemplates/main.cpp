@@ -19,8 +19,9 @@ int main() {
 
 void MyVectorDemo() {
 	MyVector<int> nums(2);
-
 	cout << nums[0];
+
+	MyVector<char*> names(3);
 }
 
 void PrintValue(int value) { cout << value; }
