@@ -10,14 +10,14 @@ public:
 
 class NonCaseSenCmp {
 public:
-	static int isEqual(const char x, const char y) {
+	static int isEqual(const char x, const char y) {		
 		return toupper(x) == toupper(y);
 	}
 };
 
-template<typename C>
+template<typename C = CaseSenCmp>
 int compare(const char* s1, const char* s2) {
-	for(int i=0; i<strlen(s1) && i<strlen(s2); i++) {		
+	for(int i=0; i<strlen(s1) && i<strlen(s2); i++) {				
 		if (!C::isEqual(s1[i], s2[i])) { // No intellisense will be provided here, as in C#
 			return s1[i] - s2[i];
 		}
@@ -29,7 +29,7 @@ int compare(const char* s1, const char* s2) {
 TemplatesAsPolicy::TemplatesAsPolicy() {
 	int i, j;
 	const char* x = "hello", * y = "HELLO";
-	i = compare<CaseSenCmp>(x, y);
+	i = compare(x, y);
 	j = compare<NonCaseSenCmp>(x, y);
 	cout << "Case Sensitive: " << i;
 	cout << "\nNon-Case Sensitive: " << j << endl;
