@@ -4,18 +4,21 @@
 #include "MySpecializedVector.cpp"
 #include "Complex.cpp"
 #include <vector>
+#include "MyArray.cpp"
 
 using namespace std;
 
 void MyVectorDemo();
 void FuntionPointerDemo();
 void ComplexDemo();
+void MyArrayDemo();
 
 int main() {
 	//TemplatesAsPolicy t1;
-	MyVectorDemo();
+	//MyVectorDemo();
 	//FuntionPointerDemo();
 	//ComplexDemo();
+	MyArrayDemo();
 }
 
 void MyVectorDemo() {
@@ -54,4 +57,18 @@ void FuntionPointerDemo() {
 void ComplexDemo() {
 	Complex<float> f(0, 0);
 	Complex<double> d = f;
+}
+
+void MyArrayDemo() {
+	MyArray<int, 2> myArray;
+	myArray[0] = 25;
+	myArray[1] = 6;
+
+	cout << myArray[0] << endl << myArray[1] << endl;
+
+	MyArray<int, 2> myArray2;
+	myArray2[0] = 1025;
+	myArray2[1] = 602;
+
+	cout << myArray2[0] << endl << myArray2[1];
 }
