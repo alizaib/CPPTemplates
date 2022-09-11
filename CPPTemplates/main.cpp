@@ -13,16 +13,27 @@ void ComplexDemo();
 
 int main() {
 	//TemplatesAsPolicy t1;
-	//MyVectorDemo();
+	MyVectorDemo();
 	//FuntionPointerDemo();
-	ComplexDemo();
+	//ComplexDemo();
 }
 
 void MyVectorDemo() {
 	MyVector<int> nums(2);
-	cout << nums[0];
+	nums[0] = 23;
+	nums[1] = 2;
+	cout << nums[0] << endl << nums[1];
 
 	MyVector<char*> names(3);
+	/*names[0] = "Ali";
+	names[1] = "Rehan";
+	names[3] = "Neelam";*/
+	names.insert("Ali", 0);
+	names.insert("Rehan", 1);
+	names.insert("Neelam", 2);
+
+	for (int i = 0; i < 3; i++)
+		cout << names[i] << endl;
 }
 
 void PrintValue(int value) { cout << value; }
