@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="Complex.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MySpecializedVector.cpp" />
     <ClCompile Include="MyVector.cpp" />
     <ClCompile Include="TemplatesAsPolicy.cpp" />
   </ItemGroup>

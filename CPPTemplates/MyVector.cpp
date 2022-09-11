@@ -32,20 +32,7 @@ MyVector<T>::MyVector(int s) {
 
 template<typename T>
 MyVector<T>::MyVector(const MyVector<T>& copy) {
-	//this = copy;
-
-	//TODO: Verify the above line
-	size = copy.getSize();
-
-	if (size != 0) {
-		ptr = new T[size];
-		for (int i = 0; i < size; i++)
-			ptr[i] = copy.ptr[i];
-	}
-	else {
-		ptr = NULL;
-	}
-
+	this = copy;
 }
 
 template<typename T>
@@ -83,51 +70,3 @@ MyVector<T>::~MyVector<T>() {
 	delete[] ptr;
 	ptr = NULL;
 }
-
-template<>
-class MyVector<char*> {
-private:
-	int size;
-	char** ptr;
-public:
-	
-	MyVector(int s) {
-		size = s;
-		if (size != 0) {
-			ptr = new char* [size];
-			for (int i = 0; i < size; i++) ptr[i] = 0;
-		}
-		else
-			ptr = 0;
-	}
-
-	MyVector(const MyVector<char*>& copy) {
-		size = copy.getSize();
-		if (size == 0) {
-			ptr = 0;
-			return;
-		}
-		ptr = new char* [size];
-		for (int i = 0; i < size; i++)
-			if (copy.ptr[i] != 0) {
-				int destLength = strlen(copy.ptr[i]) + 1;
-				ptr[i] = new char[destLength];
-				strcpy_s(ptr[i], destLength, copy.ptr[i]);
-			}
-			else
-				ptr[i] = 0;
-	}
-
-	~MyVector() {
-		for (int i = 0; i < size; i++)
-			delete[] ptr[i];
-		delete[] ptr;
-	}
-
-	int getSize() const {
-		return size;
-	}
-};
-
-
-

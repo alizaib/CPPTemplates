@@ -1,6 +1,7 @@
 #include <iostream>
 #include "TemplatesAsPolicy.h"
 #include "MyVector.cpp"
+#include "MySpecializedVector.cpp"
 #include "Complex.cpp"
 #include <vector>
 
