@@ -1,5 +1,6 @@
 #pragma once
-template<typename T, int arrSize>
+// non-type generic parameter, both type and non-type generic parameter can take default values
+template<typename T = int, int arrSize = 10>
 class MyArray {
 private:
 	const int _arrSize;
